@@ -1,0 +1,94 @@
+jsonwebtoken cors body-parser
+npm install body-parser
+npm install zod
+npm install config
+
+# or
+yarn add zod
+1. Email Verification
+Send a verification email after signup with a unique token (link).
+
+User must click the link to verify the email before being fully active.
+
+Prevents fake or typo emails and spam accounts.
+
+2. Mobile Number & OTP Verification
+Collect a mobile number during signup.
+
+Send a One-Time Password (OTP) via SMS for verification.
+
+Useful for added security or account recovery.
+
+3. Password Strength Enforcement
+Beyond length, check for complexity (uppercase, numbers, special chars).
+
+Give feedback on password strength on frontend.
+
+4. Account Lockout / Rate Limiting
+Prevent brute-force attacks by locking account or throttling login attempts after multiple failures.
+
+Can be done via IP or user account based.
+
+5. Secure JWT Storage and Refresh Tokens
+JWT should be stored securely (HttpOnly cookies or secure storage).
+
+Use refresh tokens with short-lived access tokens to improve security.
+
+Refresh tokens can be revoked on logout.
+
+6. Password Reset / Forgot Password
+Allow users to reset password via a secure email link.
+
+Use expiring tokens for password reset.
+
+7. Multi-Factor Authentication (MFA)
+Add a second factor (like Google Authenticator or SMS codes) to secure accounts.
+
+8. User Roles and Permissions
+Implement roles (admin, user, moderator) for controlling access.
+
+Role-based access control (RBAC) for different endpoints.
+
+9. Secure Password Storage
+You are already using bcrypt which is great.
+
+Consider using higher cost factor if performance permits.
+
+10. Audit Logging
+Keep logs of user activities such as logins, failed attempts, password changes.
+
+Helps with security audits.
+
+11. Data Privacy and GDPR Compliance
+Make sure user data is handled securely.
+
+Allow users to delete or export their data on request.
+
+12. API Rate Limiting
+Protect your API endpoints with rate limiting to prevent abuse.
+
+13. HTTPS Everywhere
+Make sure your entire application uses HTTPS for secure data transmission.
+
+14. Session Management / Logout
+Implement a way to invalidate JWT tokens on logout (e.g., token blacklist).
+
+15. Profile Update & Account Settings
+Allow users to update info like name, email, password securely.
+
+Validate email/mobile changes with verification.
+
+Bonus:
+Social Login / OAuth (Google, Facebook, etc.) for easy signup/signin.
+
+Captcha to prevent bots during signup/login.
+
+
+
+{
+  "oldPassword": "mypassword123",
+  "newPassword": "newpassword456"
+}
+
+
+
